@@ -31,8 +31,10 @@ jobs:
               uses: github/codeql-action/init@v2
               with:
                   languages: java-kotlin
-            - name: Autobuild
-              uses: github/codeql-action/autobuild@v2
+            - name: Enable gradlew execution
+              run: chmod +x gradlew
+            - name: Build
+              run: ./gradlew build
             - name: Perform CodeQL Analysis
               uses: github/codeql-action/analyze@v2
               with:
