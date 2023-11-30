@@ -7,8 +7,8 @@ BaseMind.AI platform.
 root                        # repository root, holding all tooling configurations
 ├─── .github                # GitHub CI/CD and other configurations
 ├─── .idea                  # IDE configurations that are shared
-├─── test-app     # test application to test the SDK
-└─── sdk          # the Android SDK code
+├─── test-app               # test application to test the SDK
+└─── sdk                    # the Android SDK code
 ```
 
 ## Installation

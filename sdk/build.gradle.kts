@@ -128,17 +128,20 @@ publishing {
                 name.set("BaseMind.AI Client")
                 description.set("API Client for the BaseMind.AI Gateway")
                 url.set("https://basemind.ai/")
+
                 licenses {
                     license {
                         name.set("The Apache Software License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
                     }
                 }
+
                 scm {
                     connection.set("scm:git:https://github.com/basemind-ai/sdk-android")
                     developerConnection.set("scm:git:https://github.com/basemind-ai/sdk-android")
                     url.set("https://github.com/basemind-ai/sdk-android")
                 }
+
                 developers {
                     organization {
                         name.set("BaseMind.AI")
