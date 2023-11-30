@@ -1,0 +1,31 @@
+version: '3'
+
+tasks:
+    install-pre-commit:
+        cmds:
+            - |
+                if command -v brew &> /dev/null; then
+                    brew install pre-commit
+                else
+                    pip install pre-commit
+                fi
+        status:
+            - command -v pre-commit &> /dev/null || exit 1
+    setup:
+        desc: Setup the project dependencies
+        cmds:
+            - task: install-pre-commit
+            - pre-commit install && pre-commit install --hook-type commit-msg
+    update:
+        cmds:
+            - pre-commit autoupdate
+            - ./gradlew wrapper --gradle-version latest
+            - ./gradlew androidDependencies
+            - ./gradlew versionCatalogUpdate
+    lint:
+        desc: Lint the project
+        cmds:
+            - pre-commit run --show-diff-on-failure --color=always --all-files
+            - ./gradlew :sdk:lint
+            - ./gradlew :test-app:lint
+            - ./gradlew spotlessApply
