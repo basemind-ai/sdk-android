@@ -1,6 +1,6 @@
 version = 1
 
-exclude_patterns = ["sdk/build/**", "test-app/**"]
+exclude_patterns = ["sdk/build/**", "example-app/**"]
 
 test_patterns = ["**/test/**"]
 
