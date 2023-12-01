@@ -58,19 +58,19 @@ android {
 dependencies {
     protobuf(files("../proto/gateway/v1"))
 
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.grpc.kotlin.stub)
     api(libs.grpc.protobuf.kotlin.lite)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.grpc.kotlin.stub)
+    implementation(libs.grpc.okhttp)
     implementation(libs.grpc.protobuf.lite)
     implementation(libs.grpc.stub)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.grpc.okhttp)
+    implementation(libs.kotlinx.coroutines.core)
 
     testImplementation(libs.grpc.testing)
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.params)
-    testImplementation(libs.system.stubs.jupiter)
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.system.stubs.jupiter)
     testRuntimeOnly(libs.junit.jupiter.engine)
 
     compileOnly(libs.annotations.api)
