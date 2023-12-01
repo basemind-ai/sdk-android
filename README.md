@@ -12,7 +12,7 @@ root                        # repository root, holding all tooling configuration
 ├─── .github                # GitHub CI/CD and other configurations
 ├─── .idea                  # IDE configurations that are shared
 ├─── gradle                 # the version catalog and the gradle wrapper
-├─── test-app               # test application to test the SDK
+├─── example-app            # example working demonstrating usage of the SDK
 └─── sdk                    # the Android SDK code
 ```
 
@@ -52,6 +52,9 @@ task update
 This will update the dependencies in the [version catalog file](./gradle/libs.versions.toml). It will also update
 the pre-commit hooks.
 
+The versions of the `protoc` and the related `protobuf` and `grpc` tooling declared in
+[the SDK build.gradle file](./sdk/build.gradle.kts), must be updated manually.
+
 ### Executing Tests
 
 The project comes with a set of run configurations for IntelliJ and Android Studio. You can execute them from inside the
@@ -68,3 +71,5 @@ Otherwise, you can execute any command using `gradlew`, for example:
 The SDK is open source.
 
 Pull requests are welcome - as long as they address an issue or substantially improve the SDK or the test app.
+
+Note: Tests are mandatory for the SDK - untested code will not be merged.

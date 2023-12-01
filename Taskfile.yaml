@@ -27,5 +27,5 @@ tasks:
         cmds:
             - pre-commit run --show-diff-on-failure --color=always --all-files
             - ./gradlew :sdk:lint
-            - ./gradlew :test-app:lint
+            - ./gradlew :example-app:lint
             - ./gradlew spotlessApply
