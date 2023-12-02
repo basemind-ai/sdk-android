@@ -11,6 +11,7 @@ BaseMind.AI platform.
 root                        # repository root, holding all tooling configurations
 ├─── .github                # GitHub CI/CD and other configurations
 ├─── .idea                  # IDE configurations that are shared
+├─── proto/gateway          # Git submodule that includes the protobuf schema
 ├─── gradle                 # the version catalog and the gradle wrapper
 ├─── example-app            # example working demonstrating usage of the SDK
 └─── sdk                    # the Android SDK code
@@ -18,7 +19,12 @@ root                        # repository root, holding all tooling configuration
 
 ### Installation
 
-1. Clone to repository to your local machine.
+1. Clone to repository to your local machine including the submodules.
+
+```shell
+git clone --recurse-submodules https://github.com/basemind-ai/sdk-android.git
+```
+
 2. Install [TaskFile](https://taskfile.dev/) and the following prerequisites:
 
     - Python >= 3.11
