@@ -4,13 +4,14 @@
 .idea/assetWizardSettings.xml
 .idea/caches
 .idea/dictionaries
+.idea/discord.xml
 .idea/libraries
 .idea/modules
 .idea/shelf
 .idea/sonarlint
 .idea/workspace.xml
-.idea/discord.xml
 build/
 coverage/
 dist/
 local.properties
+node_modules/
