@@ -38,5 +38,7 @@ jobs:
                   key: pre-commit-4|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
             - name: Enable gradlew execution
               run: chmod +x gradlew
+            - name: Build
+              run: ./gradlew build
             - name: Lint
               run: task lint

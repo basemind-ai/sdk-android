@@ -27,6 +27,8 @@ jobs:
               run: curl https://deepsource.io/cli | sh
             - name: Enable gradlew execution
               run: chmod +x gradlew
+            - name: Build
+              run: ./gradlew build
             - name: Test
               run: ./gradlew koverXmlReportRelease
             - name: Upload Coverage Report
