@@ -10,6 +10,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+val client = BaseMindClient.getInstance(ConfigModel.apiKey, options = Options(debug = true))
+
 class MainViewModel : ViewModel() {
     val conversation: StateFlow<List<ChatUiModel.Message>>
         get() = _conversation
@@ -29,7 +31,6 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             _conversation.emit(_conversation.value + myChat)
 
-            val client = BaseMindClient.getInstance(ConfigModel.apiKey, options = Options(debug = true))
             try {
                 val map = mapOf("userInput" to msg)
 

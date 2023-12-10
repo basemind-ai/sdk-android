@@ -105,8 +105,9 @@ class BaseMindClient private constructor(
             promptConfigId: String? = null,
             options: Options = Options(),
         ): BaseMindClient {
-            options.debugLogger(LOGGING_TAG, "creating client instance")
-            options.debugLogger(LOGGING_TAG, "apiToken: $apiToken")
+            if (options.debug) {
+                options.debugLogger(LOGGING_TAG, "creating client instance")
+            }
 
             val key = options.hashCode() + apiToken.hashCode() + promptConfigId.hashCode()
 
@@ -142,10 +143,7 @@ class BaseMindClient private constructor(
 
     private fun createMetadata(): Metadata {
         val metadata = Metadata()
-
-        options.debugLogger(LOGGING_TAG, "creating metadata")
         metadata.put(Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER), "Bearer $apiToken")
-        options.debugLogger(LOGGING_TAG, "metadata created: $apiToken")
         return metadata
     }
 
@@ -196,6 +194,7 @@ class BaseMindClient private constructor(
                 if (options.debug) {
                     options.debugLogger(LOGGING_TAG, "exception requesting streaming prompt: $e")
                 }
+
                 if (e !is StatusException) {
                     throw e // skipcq: TCV-001
                 }
