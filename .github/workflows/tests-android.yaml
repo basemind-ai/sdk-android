@@ -19,6 +19,7 @@ jobs:
               uses: actions/checkout@v4
               with:
                   submodules: recursive
+                  ref: ${{ github.event.pull_request.head.sha }}
             - name: Setup Java
               uses: actions/setup-java@v4
               with:
@@ -29,8 +30,6 @@ jobs:
               run: curl https://deepsource.io/cli | sh
             - name: Enable gradlew execution
               run: chmod +x gradlew
-            - name: Build
-              run: ./gradlew build
             - name: Test
               run: ./gradlew koverXmlReportRelease
             - name: Upload Coverage Report
