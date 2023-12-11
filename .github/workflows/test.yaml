@@ -1,4 +1,4 @@
-name: 'Tests (Android)'
+name: 'Test'
 on:
     push:
         branches:
