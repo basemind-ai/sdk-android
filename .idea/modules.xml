@@ -11,6 +11,12 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/BaseMind.AI.sdk.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/example-app/example-app.BaseMind.AI.example-app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/sdk.BaseMind.AI.sdk.unitTest.iml" />
     </modules>
   </component>
 </project>

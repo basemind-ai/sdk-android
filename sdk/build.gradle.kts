@@ -118,7 +118,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "ai.basemind"
             artifactId = "client"
-            version = "0.0.1"
+            version = "1.0.0"
 
             afterEvaluate {
                 from(components["release"])
