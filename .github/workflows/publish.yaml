@@ -26,4 +26,6 @@ jobs:
               env:
                   ANDROID_SIGNING_KEY: ${{secrets.ANDROID_SIGNING_KEY}}
                   ANDROID_SIGNING_PASSWORD: ${{secrets.ANDROID_SIGNING_PASSWORD}}
+                  SONATYPE_PASSWORD: ${{secrets.SONATYPE_PASSWORD}}
+                  SONATYPE_USER: ${{secrets.SONATYPE_USER}}
               run: ./gradlew sdk:publish
