@@ -82,10 +82,10 @@ protobuf {
     }
     plugins {
         create("java") {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.59.1"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.60.0"
         }
         create("grpc") {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.59.1"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.60.0"
         }
         create("grpckt") {
             artifact = "io.grpc:protoc-gen-grpc-kotlin:1.4.0:jdk8@jar"
@@ -118,7 +118,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "ai.basemind"
             artifactId = "client"
-            version = "0.0.1"
+            version = "1.0.0"
 
             afterEvaluate {
                 from(components["release"])
@@ -138,7 +138,7 @@ publishing {
 
                 scm {
                     connection.set("scm:git:https://github.com/basemind-ai/sdk-android")
-                    developerConnection.set("scm:git:https://github.com/basemind-ai/sdk-android")
+                    developerConnection.set("scm:git:https://github.com/basemind-ai/sdk-android.git")
                     url.set("https://github.com/basemind-ai/sdk-android")
                 }
 
@@ -158,17 +158,20 @@ publishing {
     repositories {
         maven {
             name = "sonatype"
-            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
 
             credentials {
-                username = providers.environmentVariable("SONATYPE_USER").orNull
-                password = providers.environmentVariable("SONATYPE_PASSWORD").orNull
+                password = System.getenv("SONATYPE_PASSWORD")
+                username = System.getenv("SONATYPE_USER")
             }
         }
     }
 }
 
 signing {
-    useGpgCmd()
+    val signingKey = System.getenv("ANDROID_SIGNING_KEY")
+    val signingPassphrase = System.getenv("ANDROID_SIGNING_PASSWORD")
+    useInMemoryPgpKeys(signingKey, signingPassphrase)
+
     sign(publishing.publications)
 }
