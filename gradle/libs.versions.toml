@@ -10,6 +10,7 @@ constraintLayout = "2.1.4"
 constraintLayoutCompose = "1.1.0-alpha13"
 coreKtx = "1.12.0"
 dependencyUpdatePlugin = "0.48.0"
+dokkaPlugin = "1.9.10"
 grpc = "1.58.0"
 grpcKotlin = "1.4.0"
 junitJupiter = "5.10.0"
@@ -18,6 +19,7 @@ kotlinX = "1.7.3"
 koverPlugin = "0.7.4"
 lifecycleRuntimeKtx = "2.6.2"
 marerialThree = "1.2.0-alpha12"
+nexusPlugin = "1.3.0"
 protobuf = "3.24.3"
 protobufPlugin = "0.9.4"
 spotlessPlugin = "6.22.0"
@@ -51,7 +53,7 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinX" }
 lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 system-stubs-jupiter = { module = "uk.org.webcompere:system-stubs-jupiter", version.ref = "systemStubsJupiter" }
-
+dokka-android = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaPlugin" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-junit-jupiter = { id = "de.mannodermaus.android-junit5", version.ref = "androidJunitJupiterPlugin" }
@@ -62,3 +64,5 @@ kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "koverPlugin" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotlessPlugin" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdatePlugin" }
+nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexusPlugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }

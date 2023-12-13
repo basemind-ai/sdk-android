@@ -1,14 +1,22 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
-
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.dokka)
     alias(libs.plugins.gradle.dependency.update)
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kover)
+    alias(libs.plugins.nexus.publish)
     alias(libs.plugins.spotless)
     alias(libs.plugins.version.catalog.update)
+}
+
+group = "ai.basemind"
+version = "1.0.0"
+
+ext {
+    set("sdkArtifactId", "client")
 }
 
 versionCatalogUpdate {
@@ -67,4 +75,16 @@ spotless {
         ktfmt()
         ktlint()
     }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            password.set(System.getenv("SONATYPE_PASSWORD"))
+            username.set(System.getenv("SONATYPE_USER"))
+        }
+    }
+    repositoryDescription = "$group:${project.ext.get("sdkArtifactId")}:$version"
 }

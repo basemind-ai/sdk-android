@@ -1,9 +1,11 @@
 plugins {
+    alias(libs.plugins.android.junit.jupiter)
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.protobuf)
-    alias(libs.plugins.android.junit.jupiter)
     alias(libs.plugins.kover)
+    alias(libs.plugins.protobuf)
+    alias(libs.plugins.dokka)
+
     id("org.jetbrains.kotlin.jvm") apply false
 
     `maven-publish`
@@ -73,6 +75,8 @@ dependencies {
     testImplementation(libs.system.stubs.jupiter)
     testRuntimeOnly(libs.junit.jupiter.engine)
 
+    dokkaPlugin(libs.dokka.android)
+
     compileOnly(libs.annotations.api)
 }
 
@@ -116,9 +120,9 @@ protobuf {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "ai.basemind"
-            artifactId = "client"
-            version = "1.0.0"
+            artifactId = rootProject.ext.get("sdkArtifactId") as String
+            groupId = rootProject.group as String
+            version = rootProject.version as String
 
             afterEvaluate {
                 from(components["release"])
@@ -170,8 +174,9 @@ publishing {
 
 signing {
     val signingKey = System.getenv("ANDROID_SIGNING_KEY")
-    val signingPassphrase = System.getenv("ANDROID_SIGNING_PASSWORD")
-    useInMemoryPgpKeys(signingKey, signingPassphrase)
+    val signingPassword = System.getenv("ANDROID_SIGNING_PASSWORD")
+
+    useInMemoryPgpKeys(signingKey, signingPassword)
 
     sign(publishing.publications)
 }
