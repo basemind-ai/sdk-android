@@ -40,6 +40,7 @@ compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics", version.ref 
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+dokka-android = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaPlugin" }
 grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpcKotlin" }
 grpc-okhttp = { module = "io.grpc:grpc-okhttp", version.ref = "grpc" }
 grpc-protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "protobuf" }
@@ -53,16 +54,16 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinX" }
 lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 system-stubs-jupiter = { module = "uk.org.webcompere:system-stubs-jupiter", version.ref = "systemStubsJupiter" }
-dokka-android = { module = "org.jetbrains.dokka:android-documentation-plugin", version.ref = "dokkaPlugin" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-junit-jupiter = { id = "de.mannodermaus.android-junit5", version.ref = "androidJunitJupiterPlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }
 gradle-dependency-update = { id = "com.github.ben-manes.versions", version.ref = "dependencyUpdatePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "koverPlugin" }
+nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexusPlugin" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotlessPlugin" }
 version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdatePlugin" }
-nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexusPlugin" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaPlugin" }

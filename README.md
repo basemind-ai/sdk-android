@@ -107,9 +107,10 @@ val client = BaseMindClient.getInstance("<API_KEY", options = options)
 
 ### Passing Prompt Config ID
 
-The `BaseMindClient.getInstance` also accepts an optional `promptConfigId` parameter. Thie parameter is `null` by default - which
-means the client will use the prompt configuration defined as `default` in the dashboard. You
-can also pass a specific prompt config ID to the client:
+The `BaseMindClient.getInstance` also accepts an optional `promptConfigId` parameter. This parameter is `null` by default
+
+-   which means the client will use the prompt configuration defined as `default` in the dashboard. You
+    can also pass a specific prompt config ID to the client:
 
 ```kotlin
 import ai.basemind.client.BaseMindClient
