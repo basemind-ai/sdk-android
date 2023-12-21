@@ -22,7 +22,7 @@ jobs:
                   distribution: 'temurin'
                   cache: gradle
             - name: Setup Gradle
-              uses: gradle/gradle-build-action@v2.11.0
+              uses: gradle/gradle-build-action@v2.11.1
               with:
                   dependency-graph: generate-and-submit
             - name: Generate Dependency Graph
